@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<style>
+		.login{padding:0px 0px;}
+		.input{font-size:20;
+			background-color:rgba(170, 185, 180, 0.555);
+		}
+		table{
+			margin-top: 90px;
+			box-shadow:5px 5px 5px 5px;
+		}
+		form{
+			margin-left: 100px;
+		}
+		.size{
+			font-size:20;
+			color:white;
+		}
+		button:active{transform:translateY(10px);}
+		body{
+			background-image:url("login.webp");
+			background-repeat: no-repeat;
+			background-size: cover;
+			
+		}
+		a{
+			text-decoration:underline;
+			color: blanchedalmond;
+		}
+	</style>
+</head>
+<body>
+	<form action="admin.jsp">
+	<table align="center">
+		<caption><h1 style="color:crimson"><u>ADMIN LOGIN</u></h1></caption>
+		<th colspan='2' align="center" style="font-family: Arial, Helvetica, sans-serif; color: blanchedalmond;"><h2>SUPER BANK OF INDIA</h2></th><br><br>
+		<tr>
+			<td align="right" class="size" required>USERNAME :</td>
+			<td><input type="text" name="uname" class="input"></td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="size">PASSWORD :</td>
+			<td><input type="password" name="pass" required class="input"></td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2' align="center"><button type="submit" class="login" style="background:transparent"><img src="login button.png" height=30px width=100px></button></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

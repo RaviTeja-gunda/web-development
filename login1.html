@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<style>
+		.login{padding:0px 0px;}
+		.size{font-size:20;}
+		button:active{transform:translateY(10px);}
+		body{
+			background-image:url("login.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		
+	</style>
+	<script>
+		function validation(){
+			var mail=prompt("Please enter your email");
+            if(mail!=null){
+                location.replace("forget.jsp");
+            }
+			else{
+				alert("Enter a valid mail");
+				window.location.replace("forget.jsp?email="+mail);
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="login attributes.jsp">
+	<table align="center" width=600px height=200px style="box-shadow:5px 5px 5px 5px">
+		<caption><h1 style="color:crimson"><u>LOGIN PAGE</u></h1></caption>
+		<th colspan='2' align="center" style="font-family: Arial, Helvetica, sans-serif;"><h2>SUPER BANK OF INDIA</h2></th><br><br>
+		<tr>
+			<td align="right" class="size" required style="color:deeppink">USERNAME :</td>
+			<td><input type="text" name="uname" required style="background:transparent"></td>
+		</tr>
+		<tr>
+			<td align="right" class="size" style="color:deeppink">PASSWORD :</td>
+			<td><input type="password" name="pass" required style="background:transparent"></td>
+		</tr>
+		<tr>
+			<td colspan='2' align="center"><button type="submit" class="login" style="background:transparent"><img src="login button.png" height=30px width=100px></button></td>
+		</tr>
+	</table>
+	</form>
+	<form name="myform" onsubmit="return validation()">
+		<h3 style="margin-left:550px">Forget <a href="forget.jsp" style="text-decoration:underline">password...</a></h3>
+	</form>
+</body>
+</html>

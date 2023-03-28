@@ -1,0 +1,89 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<script>
+		function validation() {
+			var acct=document.myform.acc.value;
+			if(acct.length!=10) {
+				window.alert("Length of A/C Number is atmost 10");
+				return false;
+			}
+			/*if(acct.indexOf("A")!=5){
+				window.alert("Please Enter valid A/C Number. It's format is like 20761A0583");
+				return false;
+			}
+			var nam=document.myform.nam.value;
+			if(nam.length<6) {
+				window.alert("The name contains atleast 6 charcters");
+				return false;
+			}*/
+			var letters=/^[a-zA-Z\s]+$/;
+			if(!nam.match(letters)) {
+				window.alert("The name contains only characters");
+				return false;
+			}
+			var rps=document.myform.rps.value;
+			if(!rps.match(letters)) {
+				window.alert("Please Enter Amount in words");
+				return false;
+			}
+			var amount=document.myform.amount.value;
+			if(isNaN(amount)) {
+				window.alert("Please Enter Amount in the form of digits");
+				return false;
+			}
+			if(amount<0) {
+				window.alert("Invalid Amount has been entered");
+				return false;
+			}
+			if(amount>20000) {
+				window.alert("The Amount has been exceeded");
+				return false;
+			}
+		}
+	</script>
+	<style>
+		.bgtable{
+			background-image:url("bgtable.jpg");
+			background-repeat:no-repeat;
+			background-position:center;
+		}
+		.withdrawl{
+			padding:0px 0px;
+			border-radius:50px;
+		}
+		button:active{transform:translateY(10px); box-shadow:chocolate 0px 10px 18px 0px ;}
+	</style>
+</head>
+	<body>
+		<form action="withdrawl.jsp" name="myform" onsubmit="return validation()">
+		<div>
+		<table width=700px height=320px align="center" class="bgtable">
+		<caption><h1><u>WITHDRAWL FORM</u><h1></caption>
+		<th colspan='2' style="font-family: Arial, Helvetica, sans-serif"><h2>SUPER BANK OF INDIA<h2>
+		</th>
+		<tr>
+			<td colspan='2' align="right">DATE :<input type="date" name="date" required></td>
+		</tr>
+		<tr>
+			<td colspan='2' align="right">A/C NUMBER :<input type="text" name="acc" required></td>
+		</tr>
+		<tr>
+			<td width=100px>NAME :</td>
+			<td><input type="text" name="nam" required></td>
+		</tr>
+		<tr>
+			<td width=100px>AMOUNT IN WORDS :</td>
+			<td><input type="text" name="rps" required></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right">TOTAL AMOUNT :<input type="text" name="amount" required>
+		</tr>
+		</table></div>
+		<div>
+			<center><button class="withdrawl" type="Submit" name="submit"><img src="withdrawl submit.jpg" style="border-radius:50px" width=100px height=100px></button>
+		</div>
+	</body>
+	<form>
+</html>

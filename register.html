@@ -1,0 +1,144 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	 <script>
+		function validation() {
+			var nam=document.myform.nam.value;
+			if(nam.length<6) {
+				window.alert("the name contains atleast 6 characters");
+				return false;
+			}
+			var letters=/^[a-zA-Z\s]+$/;
+			if(!nam.match(letters)) {
+				window.alert("the name contains only characters");
+				return false;
+			}
+			var fname=document.myform.fname.value;
+			if(fname.length<6) {
+				window.alert("the name contains atleast 6 charcters");
+				return false;
+			}
+			var letters=/^[a-zA-Z\s]+$/;
+			if(!fname.match(letters)) {
+				window.alert("the name contains only characters");
+				return false;
+			}
+			var ph=document.myform.phn.value;
+			if(isNaN(ph)) {
+				window.alert("the phone number contains digits only");
+				return false;
+			}
+			if(ph.length!=10) {
+				window.alert("phone number contains only 10 digits");
+				return false;
+			}
+			var acct=document.myform.acc.value;
+			if(acct.length!=10) {
+				window.alert("Length of A/C Number is atmost 10");
+				return false;
+			}
+			if(acct.indexOf("A")!=5){
+				window.alert("Please Enter valid A/C Number");
+				return false;
+			}
+			var emai=document.myform.email.value;
+			atpos=emai.indexOf("@");
+			dotpos=emai.lastIndexOf(".");
+			if(atpos<1 || dotpos<atpos+2 || dotpos+2>emai.length) {
+				window.alert("Please Enter valid email ");
+				return false;
+			}
+			var uname=document.myform.user.value;
+			if(uname.length<4) {
+				window.alert("User Name contains atleast 4 characters");
+				return false;
+			}
+			var password=document.myform.pass.value;
+			if(password.length<4) {
+				window.alert("Password contains atleast 4 charcters");
+				return false;
+			}
+			var conf=document.myform.conpass.value;
+			if(conf!=password) {
+				window.alert("Recorrect the confirm password");
+				return false;
+			}
+		}
+	</script> 
+	<style>
+		.register{padding:3px 3px;} 
+		button:active{transform:translateY(10px); 
+		box-shadow:magenta 0px 10px 18px 0px ;}
+		body{
+			
+			background-color:rgba(226, 234, 173, 0.2);
+		}
+		table{
+			box-shadow:5px 5px 5px 5px;
+			background:transparent;
+		}	
+		.lab{
+			color:crimson
+		}
+		.input{
+			background-color:rgba(128, 128, 128, 0.225);
+		}
+	</style>
+</head>
+<body>
+	<form action="register.jsp" name="myform" onsubmit="return validation()">
+	<div  width:700px margin: 0px 230px">
+	<table width=700px height=576px align="center">    <!--width=700px height=576px-->
+		<caption><h2 style="color:rgb(114, 201, 172)"><u>REGISTRATION FORM</h2></caption>
+		<th colspan='2' style="font-family: Arial, Helvetica, sans-serif;color:rgb(181, 98, 98)"><big>SUPER BANK OF INDIA</big></th>
+		<tr>
+			<td colspan='2' align="right" class="lab">DATE :<input type="date" name="dat" required class="input"></td>
+		</tr>
+		<tr>
+			<td width=140px class="lab">BRANCH :</td>
+			<td><input type="text" name="branch" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">NAME :</td>
+			<td><input type="text" name="nam" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">FATHER NAME :</td>
+			<td><input type="text" name="fname" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">PHONE NUMBER :</td>
+			<td><input type="text" name="phn" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">A/C NUMBER :</td>
+			<td><input type="text" name="acc" placeholder="eg: 20761A0583" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">Email ID :</td>
+			<td><input type="mail" name="email" required class="input"></td>
+		</tr>
+		<tr height=75px>
+			<td class="lab">ADDRESS :</td>
+			<td><textarea rows="4" cols="50" name="add" required class="input"></textarea></td>
+		</tr>
+		<tr>
+			<td class="lab">USERNAME :</td>
+			<td><input type="text" name="user" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">PASSWORD :</td>
+			<td><input type="password" name="pass" required class="input"></td>
+		</tr>
+		<tr>
+			<td class="lab">CONFIRM PASSWORD :</td>
+			<td><input type="password" name="conpass" required class="input"></td>
+		</tr>
+		<tr>
+			<td colspan='2' align="center" height=56px><button type="submit" class="register" style="border-radius:50px"><img src="register button.jpg" style="border-radius:50px" width=90px height=90px></button></td>
+		</tr>
+	</table><br></div><br>
+	</form>
+</body>
+</html>
