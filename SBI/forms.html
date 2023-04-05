@@ -1,0 +1,80 @@
+<html>
+  <head>
+     <title>form validation</title>
+<script>
+function validation()
+{
+  var u=document.getElementById("uname").value;
+  if(u=="")
+  {
+     window.alert("uname should not be blank");
+     return false;
+  }
+  if(u.length<"6")
+  {
+     window.alert("plz enter more than 6 chars");
+     return false;
+  }
+  var letters=/^[a-zA-Z\s]+$/;
+  if(!u.match(letters))
+  {
+     window.alert("username should contain only chars")
+     return false;
+  }
+  var p=document.myform.pwd.value;
+  var c=document.myform.cpwd.value;
+  if(p=="")
+  {
+     window.alert("password should not be blank");
+     return false;
+  }
+  if(p.length<6)
+  {
+     window.alert("password min 6");
+     return false;
+  }
+   var mob=document.myform.mobile.value;
+    if(mob=="")
+    {
+	window.alert("ph.no shouldnt be blank");
+	return false;
+    }
+     if(isNaN(mob))
+     {
+	window.alert("ph.no should contain only digits");
+	return false;
+     }
+     if(mob.length!=10)
+     {
+	window.alert("enter valid ph.no");
+	return false;
+     }
+     var email=dovument.myform.mail.value;
+     atpos=email.indexOf("@");
+     dotpos=email.lastIndexOf(".");
+     if(email=="")
+     {
+	window.alert("email shouldnt be blank");
+	return false;
+     }
+     if(atpos<1 || dotpos<atpos+2 || dotpos+2>email.length)
+     {
+	alert("plz enter valid email");
+	return false;
+     }
+     window.alert("registration is successful");
+	return false;
+}
+</script>
+</head>
+<body>
+   <form name="myform" action="http://www.lbrce.ac.in" onsubmit="return validation()">
+	Enter your name :<input type="text" id="uname"/></br>
+	enter your password:<input type="password" name="pwd"/></br>
+	enter your confirm password:<input type="password" name="cpwd"/></br>
+	enter your mobile number:<input type="text" name="mobile"/></br>
+	enter your email :<input type="text" name="mail"/></br>
+	<input type="submit"/> <input type="reset"/>
+   </form>
+</body>
+</html>	
